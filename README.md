@@ -111,37 +111,6 @@ conan build .. -if build -bf build -pf package
 ```
 </details>
 
-<details><summary>MacOS Premake</summary>
-
-For MacOS using premake, proceed: [Building on MacOS](https://github.com/GTAmodding/re3/wiki/Building-on-MacOS)
-
-</details>
-
-<details><summary>FreeBSD</summary>
-
-For FreeBSD using premake, proceed: [Building on FreeBSD](https://github.com/GTAmodding/re3/wiki/Building-on-FreeBSD)
-
-</details>
-
-<details><summary>Windows</summary>
-
-Assuming you have Visual Studio 2015/2017/2019:
-- Run one of the `premake-vsXXXX.cmd` variants on root folder.
-- Open build/reVC.sln with Visual Studio and compile the solution.
-    
-Microsoft recently discontinued its downloads of the DX9 SDK. You can download an archived version here: https://archive.org/details/dxsdk_jun10
-
-**If you choose OpenAL on Windows** You must read [Running OpenAL build on Windows](https://github.com/GTAmodding/re3/wiki/Running-OpenAL-build-on-Windows).
-</details>
-
-> :information_source: premake has an `--with-lto` option if you want the project to be compiled with Link Time Optimization.
-
-> :information_source: There are various settings in [config.h](https://github.com/GTAmodding/re3/tree/miami/src/core/config.h), you may want to take a look there.
-
-> :information_source: reVC uses completely homebrew RenderWare-replacement rendering engine; [librw](https://github.com/aap/librw/). librw comes as submodule of re3, but you also can use LIBRW enviorenment variable to specify path to your own librw.
-
-If you feel the need, you can also use CodeWarrior 7 to compile reVC using the supplied codewarrior/reVC.mcp project - this requires the original RW34 libraries, and the DX8 SDK. The build is unstable compared to the MSVC builds though, and is mostly meant to serve as a reference.
-
 ## Contributing
 As long as it's not linux/cross-platform skeleton/compatibility layer, all of the code on the repo that's not behind a preprocessor condition(like FIX_BUGS) are **completely** reversed code from original binaries.  
 
