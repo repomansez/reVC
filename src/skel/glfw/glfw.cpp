@@ -1930,6 +1930,10 @@ main(int argc, char *argv[])
 	glfwInitHint(GLFW_PLATFORM, GLFW_PLATFORM_X11);
 #endif
 
+#ifdef GLFW_USE_WAYLAND
+	glfwInitHint(GLFW_PLATFORM, GLFW_PLATFORM_WAYLAND);
+#endif
+
 	/* 
 	 * Initialize the platform independent data.
 	 * This will in turn initialize the platform specific data...

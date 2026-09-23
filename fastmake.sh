@@ -10,7 +10,7 @@ cd "$REPO_ROOT"
 
 rm -rf build bin
 
-./premake5Linux --with-librw --use-wayland gmake2
+./premake5Linux --with-librw --use-wayland --buggy gmake2
 ./printHash.sh src/extras/GitSHA1.cpp
 
-make -C build config=debug_linux-amd64-librw_gl3_glfw-oal -j"$(nproc)"
+make -C build config=release_linux-amd64-librw_gl3_glfw-oal -j"$(nproc)"
