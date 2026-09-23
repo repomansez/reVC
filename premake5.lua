@@ -47,6 +47,11 @@ newoption {
 	description = "Don't read keyboard input from the X server"
 }
 
+newoption {
+	trigger		= "buggy",
+	description	= "easy access to buggy!"
+}
+
 require("autoconf")
 
 if(_OPTIONS["with-librw"]) then
@@ -127,6 +132,10 @@ workspace "re3"
 	filter "configurations:not Debug"
 		defines { "NDEBUG" }
 		optimize "Speed"
+		if(not _OPTIONS["buggy"]) then
+			defines { "NOT_BUGGY_GAME" }
+		end
+
 		if(_OPTIONS["with-lto"]) then
 			flags { "LinkTimeOptimization" }
 		end

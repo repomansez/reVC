@@ -264,7 +264,10 @@ enum Config {
 #	define TIMEBARS		// print debug timers
 #endif
 
+#ifdef NOT_BUGGY_GAME
 #define FIX_BUGS		// fixes bugs that we've came across during reversing. You can undefine this only on release builds.
+#endif
+
 #define MORE_LANGUAGES		// Add more translations to the game
 #define COMPATIBLE_SAVES // this allows changing structs while keeping saves compatible, and keeps saves compatible between platforms, needs to be enabled on 64bit builds!
 #define FIX_INCOMPATIBLE_SAVES // try to fix incompatible saves, requires COMPATIBLE_SAVES
@@ -346,9 +349,15 @@ enum Config {
 // #define BETA_SLIDING_TEXT
 #define TRIANGULAR_BLIPS	// height indicating triangular radar blips, as in VC
 #define FIX_RADAR			// use radar size from early version before R* broke it
+<<<<<<< HEAD
 // #define XBOX_SUBTITLES	// the infamous outlines
 #define RADIO_OFF_TEXT
 #define PC_MENU
+=======
+#ifdef NOT_BUGGY_GAME
+#define RADIO_OFF_TEXT		// Won't work without FIX_BUGS
+#endif
+>>>>>>> 790d2afc (Wayland by default)
 
 #ifndef PC_MENU
 #	define PS2_MENU
@@ -402,7 +411,7 @@ enum Config {
 #endif
 
 // Replay
-//#define DONT_FIX_REPLAY_BUGS // keeps various bugs in CReplay, some of which are fairly cool!
+#define DONT_FIX_REPLAY_BUGS // keeps various bugs in CReplay, some of which are fairly cool!
 //#define USE_BETA_REPLAY_MODE // adds another replay mode, a few seconds slomo (caution: buggy!)
 
 // Vehicles
@@ -422,17 +431,32 @@ enum Config {
 //#define PEDS_REPORT_CRIMES_ON_PHONE // requires COMPATIBLE_SAVES
 
 // Camera
+<<<<<<< HEAD
 //#define PS2_CAM_TRANSITION	// old way of transitioning between cam modes
 #define IMPROVED_CAMERA		// Better Debug cam, and maybe more in the future
 #define FREE_CAM		// Rotating cam
+=======
+//#define IMPROVED_CAMERA		// Better Debug cam, and maybe more in the future
+//#define FREE_CAM		// Rotating cam
+>>>>>>> 790d2afc (Wayland by default)
 
 // Audio
 #define EXTERNAL_3D_SOUND // use external engine to simulate 3d audio spatialization. OpenAL would not work without it (because it works in a 3d space
                           // originally and making it work in 2d only requires more resource). Will not work on PS2
+<<<<<<< HEAD
 #define AUDIO_REFLECTIONS // Enable audio reflections. Disabled on mobile, didn't exist yet on PS2.
 #define RADIO_SCROLL_TO_PREV_STATION
 #define AUDIO_CACHE
 #define PS2_AUDIO_CHANNELS // increases the maximum number of audio channels to PS2 value of 44 (PC has 28 originally)
+=======
+#define AUDIO_REFLECTIONS // Enable audio reflections. This is enabled in all vanilla versions
+#define AUDIO_REVERB // Enable audio reverb. It was disabled in PS2 and mobile versions
+#ifdef NOT_BUGGY_GAME
+#define RADIO_SCROLL_TO_PREV_STATION // Won't work without FIX_BUGS
+#endif
+#define AUDIO_CACHE // cache sound lengths to speed up the cold boot
+#define PS2_AUDIO_CHANNELS // increases the maximum number of audio channels to PS2 value of 43 (PC has 28 originally)
+>>>>>>> 790d2afc (Wayland by default)
 #define PS2_AUDIO_PATHS // changes audio paths for cutscenes and radio to PS2 paths (needs vbdec on MSS builds)
 //#define AUDIO_OAL_USE_SNDFILE // use libsndfile to decode WAVs instead of our internal decoder
 #define AUDIO_OAL_USE_MPG123 // use mpg123 to support mp3 files
