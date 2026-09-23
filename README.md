@@ -2,6 +2,10 @@
 
 ## Intro
 
+THIS IS REPOMANS FORK OF HEZKORE's MIAMI BRANCH OF RE3, MEANT JUST FOR PLAYING AROUND AND PRETENDING I KNOW C++ :)\
+
+THE REST OF THIS README IS UNTOUCHED FROM ORIGINAL
+
 The original re3 is no longer up, its repository was taken down and GitHub answers with a legal notice now.\
 This is my fork of the last version of it I had, with my own fixes on top.
 
